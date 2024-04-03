@@ -4,14 +4,14 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = HeroSlice;
 
 /**
- * Content for homePage documents
+ * Content for Homepage documents
  */
 interface HomepageDocumentData {
   /**
-   * Title field in *homePage*
+   * Title field in *Homepage*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -22,7 +22,7 @@ interface HomepageDocumentData {
   title: prismic.KeyTextField;
 
   /**
-   * Slice Zone field in *homePage*
+   * Slice Zone field in *Homepage*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -31,7 +31,7 @@ interface HomepageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
-   * Meta Title field in *homePage*
+   * Meta Title field in *Homepage*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -42,7 +42,7 @@ interface HomepageDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *homePage*
+   * Meta Description field in *Homepage*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -53,7 +53,7 @@ interface HomepageDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *homePage*
+   * Meta Image field in *Homepage*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -65,7 +65,7 @@ interface HomepageDocumentData {
 }
 
 /**
- * homePage document from Prismic
+ * Homepage document from Prismic
  *
  * - **API ID**: `homepage`
  * - **Repeatable**: `false`

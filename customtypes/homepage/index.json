@@ -1,7 +1,7 @@
 {
   "format": "page",
   "id": "homepage",
-  "label": "homePage",
+  "label": "Homepage",
   "repeatable": false,
   "status": true,
   "json": {
@@ -17,7 +17,11 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

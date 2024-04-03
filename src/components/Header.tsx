@@ -17,7 +17,6 @@ export default async function header() {
               <PrismicNextLink field={link}>{label}</PrismicNextLink>
             </li>
           ))}
-          <li>About</li>
         </ul>
       </nav>
     </header>
