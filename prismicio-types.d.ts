@@ -4,12 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice =
-  | CallToActionSlice
-  | TextWithImageSlice
-  | TestimonialsSlice
-  | FeaturesSlice
-  | HeroSlice;
+type HomepageDocumentDataSlicesSlice = never;
 
 /**
  * Content for homePage documents
