@@ -39,6 +39,7 @@
               "config": {
                 "label": "Link",
                 "placeholder": "",
+                "allowTargetBlank": false,
                 "select": null
               }
             },
