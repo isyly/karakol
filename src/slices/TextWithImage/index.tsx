@@ -44,7 +44,7 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
             slice.variation === "imageRight" && "md:order-2"
           )}
         />
-        <div className="grid gap-4">
+        <div className="grid gap-5">
           <PrismicRichText
             components={components}
             field={slice.primary.heading}
