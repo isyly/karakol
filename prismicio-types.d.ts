@@ -85,7 +85,12 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice =
+  | FeaturesSlice
+  | TestimonialsSlice
+  | CallToActionSlice
+  | HeroSlice
+  | TextWithImageSlice;
 
 /**
  * Content for Page documents
