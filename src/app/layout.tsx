@@ -43,6 +43,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <div className="fixed bg-gradient-to-tr from-red-orange-50 to-red-orange-100 z-[-1] inset-0 opacity-100"></div>
 
         </body>
     </html>
