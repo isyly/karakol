@@ -60,7 +60,7 @@ const Testimonials = async ({
             item && (
               <div
                 key={index}
-                className=" bg-white shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between"
+                className=" bg-white shadow-lg rounded-lg px-8 md:px-14 py-10 md:py-16 grid content-between text-balance"
               >
                 <PrismicRichText
                   field={item.data.quote}
