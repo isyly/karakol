@@ -11,13 +11,17 @@ import clsx from "clsx";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
-    <Heading as="h2" size="sm" className="font-semibold text-center mb-4">
+    <Heading
+      as="h2"
+      size="sm"
+      className="sm:text-center  font-semibold  mb-4 text-pretty"
+    >
       {children}
     </Heading>
   ),
 
   paragraph: ({ children }) => (
-    <p className=" text-center text-slate-600 mb-8">{children}</p>
+    <p className="  text-slate-600 mb-8 text-pretty ">{children}</p>
   ),
 };
 
@@ -35,6 +39,7 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="md:odd:text-start md:even:text-end"
     >
       <div className="grid gap-8 md:grid-cols-2 place-items-center">
         <PrismicNextImage
