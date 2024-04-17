@@ -1,3 +1,4 @@
+'use client'
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import {
@@ -9,6 +10,7 @@ import {
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import ImageMove from "../Contact/ImageMove";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -84,9 +86,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <Button field={slice.primary.button_link} className="mb-8 md:mb-10">
               {slice.primary.button_text}
             </Button>
-            <PrismicNextImage
-              field={slice.primary.image}
-              className="drop-shadow-xl rounded-md max-w-4xl w-full"
+            <ImageMove
+              image={slice.primary.image}
+              className=" drop-shadow-xl rounded-md max-w-4xl w-full "
             />
           </div>
         </Bounded>

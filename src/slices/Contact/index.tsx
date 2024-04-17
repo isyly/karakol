@@ -11,6 +11,7 @@ import {
 } from "@prismicio/react";
 import Heading from "@/components/Heading";
 import { PrismicNextImage } from "@prismicio/next";
+import ImageMove from "./ImageMove";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
@@ -148,12 +149,7 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
             </span>
           </button>
         </form>
-        <div className="content-center">
-          <PrismicNextImage
-            field={slice.primary.image}
-            className="first-line:rounded-xl"
-          />
-        </div>
+        <ImageMove image={slice.primary.image} className="scale-x-[-1]" />
       </div>
     </Bounded>
   );
