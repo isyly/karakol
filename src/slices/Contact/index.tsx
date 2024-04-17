@@ -9,7 +9,6 @@ import {
   SliceComponentProps,
   JSXMapSerializer,
 } from "@prismicio/react";
-import LeafIcon from "@/components/LeafIcon";
 import Heading from "@/components/Heading";
 import { PrismicNextImage } from "@prismicio/next";
 
@@ -91,69 +90,70 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
       <div className="mb-8 text-[clamp(1.2rem,13vmin,13rem)] font-extrabold leading-none tracking-tighter">
         <PrismicRichText field={slice.primary.Title} components={components} />
       </div>
-        <div className="grid min-h-[50vh] grid-cols-1 md:grid-cols-2 gap-8">
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className=" mt-2 flex flex-col gap-8"
+      <div className="grid min-h-[50vh] grid-cols-1 md:grid-cols-2 gap-8">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className=" mt-2 flex flex-col gap-8"
+        >
+          <label className="flex flex-col">
+            <span className="text-slate-400 font-medium mb-4">Votre Nom</span>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Pierre Dupont"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-slate-600 rounded-lg outline-none
+              border-none font-medium"
+            />
+          </label>
+
+          <label className="flex flex-col">
+            <span className="text-slate-400 font-medium mb-4">
+              Votre courrier électronique
+            </span>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="exemple@monadresse.com"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-slate-600 rounded-lg outline-none
+              border-none font-medium"
+            />
+          </label>
+
+          <label className="flex flex-col">
+            <span className="text-slate-400 font-medium mb-4">
+              Votre message
+            </span>
+            <textarea
+              rows={parseInt("7")}
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              placeholder="Hello, je voudrais vous parler de..."
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-slate-600 rounded-lg outline-none
+              border-none font-medium"
+            />
+          </label>
+          <button
+            type="submit"
+            className="  block w-fit bg-red-orange-500 hover:bg-red-orange-700 transition-color duration-200 ease-in-out py-3 px-12 rounded-full font-display text-white font-bold text-base tracking-wider"
           >
-            <label className="flex flex-col">
-              <span className="text-slate-400 font-medium mb-4">Votre Nom</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Pierre Dupont"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-slate-600 rounded-lg outline-none
-              border-none font-medium"
-              />
-            </label>
-
-            <label className="flex flex-col">
-              <span className="text-slate-400 font-medium mb-4">
-                Votre courrier électronique
-              </span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="exemple@monadresse.com"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-slate-600 rounded-lg outline-none
-              border-none font-medium"
-              />
-            </label>
-
-            <label className="flex flex-col">
-              <span className="text-slate-400 font-medium mb-4">
-                Votre message
-              </span>
-              <textarea
-                rows={parseInt("7")}
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Hello, je voulais vous dire que..."
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-slate-600 rounded-lg outline-none
-              border-none font-medium"
-              />
-            </label>
-            <button
-              type="submit"
-              className="  block w-fit bg-red-orange-500 hover:bg-red-orange-700 transition-color duration-200 ease-in-out py-3 px-12 rounded-full font-display text-white font-bold text-base tracking-wider"
-            >
-              <span className="relative flex items-center justify-center gap-2">
-                {loading ? "Envoi en cours" : "Envoyer"}{" "}
-                {<MdArrowOutward className="inline-block" />}
-              </span>
-            </button>
-          </form>
-        <PrismicNextImage
-          field={slice.primary.image}
-          className="first-line:rounded-xl "
-        />
-
+            <span className="relative flex items-center justify-center gap-2">
+              {loading ? "Envoi en cours" : "Envoyer"}{" "}
+              {<MdArrowOutward className="inline-block" />}
+            </span>
+          </button>
+        </form>
+        <div className="content-center">
+          <PrismicNextImage
+            field={slice.primary.image}
+            className="first-line:rounded-xl"
+          />
+        </div>
       </div>
     </Bounded>
   );
